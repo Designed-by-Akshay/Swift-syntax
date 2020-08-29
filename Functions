@@ -1,0 +1,55 @@
+// Overview 
+
+func myFunction(parameter: DataType){
+
+}
+
+//You can hold down the option key and check they type of variable
+var myAge :Int = 12 //Here I explicitly assigned it a Int but you can also do var myAge = 12 Note all the dataType start with Caps
+var name :String = " " //          ''                    ''                              
+
+
+//Implementation of a function
+
+
+func greeting(whoToGreet: String){
+
+  print("Hello\(whoToGreet)")
+  
+}
+
+greeting(whoToGreet: "Tim")
+
+
+
+//DO !!  have a glance at this code to have a look how it is implmented note that where i use the soundName because its a string i just write it across without the double quotes
+
+
+import UIKit
+import AVFoundation
+
+class ViewController: UIViewController {
+    
+    var player: AVAudioPlayer!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    
+    @IBAction func KeyPressed(_ sender: UIButton) {
+        //print(sender.titleLabel!.text)
+        //print(sender.title(for: .normal))
+        let  currentButton = sender.currentTitle
+        print(currentButton ?? "default")
+        playSound(buttonName: currentButton!)
+        
+    }
+    
+    func playSound(buttonName:String) {
+        let url = Bundle.main.url(forResource: buttonName, withExtension: "wav")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
+                
+    }
+}
