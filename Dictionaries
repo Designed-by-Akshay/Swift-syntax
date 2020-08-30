@@ -1,0 +1,18 @@
+//Overview
+
+var dict = ["Brewery": "a place where beer is made",
+             "Bakery": " a place where bread is made "]
+             
+var teamNum = ["Team1": 56, "Team2": 78, "Team3": 98]             
+
+
+
+//Explicit declaration
+
+var dict : [String : Int] = ["Steve" : 7712327924,
+                             "Tim"   :  374879563]
+                             
+                             
+//Retrieving Items From a Dictionary
+//To retrieve items from a dictionary we just write the name of the key
+dict["Steve"]
