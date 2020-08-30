@@ -1,0 +1,8 @@
+//If you have more than 5 condition checks it is preferable if you use a switch statement instead of an if else statement
+
+//The Range Operator
+
+//a ... b Closed Range
+//a ..< b Half Open Range
+// ...b  One Sided Range ie(Any number upto and inclusve of b)
+
