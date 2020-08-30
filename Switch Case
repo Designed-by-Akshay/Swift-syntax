@@ -1,0 +1,48 @@
+//Overview
+
+switch  {
+case  :
+    // code
+default:
+    // code
+}
+
+
+
+
+
+
+
+
+
+
+//Below are examples of Switch case
+
+func loveCalculator(){
+    
+    let loveScore = Int.random(in: 0...100)
+    
+    switch loveScore {
+    case 80 ... 100 :
+         print("You love each other like Kanye loves Kanye")
+    case 40 ..< 80 :
+          print("You go together like Coke and Mentos.")
+    default:
+        print("You'll forever be alone")
+    }
+    
+    
+}
+
+//
+   
+        switch hardness {
+        case "Soft":
+             print(softTime)
+        case "Medium":
+             print(mediumTime)
+        case"Hard":
+            print(hardTime)
+        default:
+            print("Error")
+        }
