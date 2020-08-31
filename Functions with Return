@@ -1,0 +1,14 @@
+//Overview
+
+func getMilk(money: Int) -> Int {
+  let change = money - 2
+  return change
+
+}
+
+// return can be Int, bool ... any datatype
+
+------
+var change = getMilk(4)
+
+------
