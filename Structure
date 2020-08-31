@@ -1,0 +1,51 @@
+
+//Overview
+//Do note that while declaring a struct its name should start with a capital
+Struct Mystruct{
+    
+    init(){
+    }
+}
+
+//Structures are like blue prints and the init() {} which is a constructor assigns values to the variables
+
+//The structs hsould be refereced to a variable as follows
+
+var struct = Mystruct()
+
+-----------------------------------------------------------------------
+//Sample code 
+
+
+struct Town{
+    
+    let name : String
+    var citizens : [String]
+    var resources:[String:Int]
+    
+    init(name:String , people:[String], resources: [String:Int]) {
+        self.name = name
+        citizens = people
+        self.resources = resources
+    }
+
+    //method ie inside a stucture /class if it was a standalone then it would be called a function
+    func fortify(){
+        print("Defences increased !")
+    }
+
+}
+
+var anotherTown = Town(name: "Nameless Island", people: ["Tom Hanks"], resources: ["Coconuts":100])
+anotherTown.fortify()
+print(anotherTown.citizens)
+anotherTown.citizens.append("Wilson")
+print(anotherTown.citizens)
+
+
+var ghostTown = Town(name: "Ghosty McGhostface", people: [], resources: ["Tumbleweed":1])
+
+anotherTown.citizens.append("Wilson")
+ghostTown.fortify()
+
+
