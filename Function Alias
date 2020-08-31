@@ -1,0 +1,37 @@
+//A note on Function
+
+//while decalring functions and calling them the following ways can be possible
+
+function checkAnswer(userAnswer:String){
+  print(userAnswer)
+}
+-------------------------
+
+var userInput:String
+checkAnswer(userAnswer:userInput )
+
+
+--------------------------------------------------------------------------------------------
+function checkAnswer(answer userAnswer: String){
+  print(userAnswer)
+}
+----------------------------
+
+var userInput:String
+checkAnswer(answer:userInput )
+
+
+--------------------------------------------------------------------------------------------
+func checkAnswer(_ userAnswer: String){
+        print(userAnswer)
+        }
+        
+----------------------------
+
+var userInput:String
+checkAnswer(userInput)
+
+        
+ --------------------------------------------------------------------------------------------       
+        
+        
