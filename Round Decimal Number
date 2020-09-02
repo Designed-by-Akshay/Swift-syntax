@@ -10,7 +10,7 @@ print(roundedValue2) // returns 0.685
 #2.Using String format
 let a:String = String(format: "%.2f", currentRatio)
 
-//Here the 2f indicates you want 2 decimal places after the decimal
+//Here the 2f indicates you want 2 decimal places after the decimal, 0f for no decimal places
 
 ---------------------------------------------------------
 
