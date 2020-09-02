@@ -1,0 +1,5 @@
+To round a Double with 3 digits precision, first multiply it by 1000, round it and divide the rounded result by 1000:
+
+let x = 1.23556789
+let y = Double(round(1000*x)/1000)
+print(y)  // 1.236
