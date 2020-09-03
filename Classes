@@ -1,4 +1,8 @@
 //Classes are similar to structures in terms of definition and execution but the MAIN DIFFERENCE IS THAT classes facilitate INHERITANCE
+//Note it is good practice to name the file the same name of the  class in Capital letters
+//Overview
+
+classMyClass : superClass{}
 
 
 
