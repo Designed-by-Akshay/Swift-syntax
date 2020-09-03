@@ -1,6 +1,11 @@
+//Overview
+
 // Structs do not facilitate inheritance whereas classes support inheritance
 //Classes are Passed by referenced where are Structs are Passed by Value
 //Classes DO REQUIRE an init() to initialise non assigned variables
+//Apple advices to create struct whereever possibe
+
+//Example
 
 ---------------------------------------------------------------
 struct Enemy{
