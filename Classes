@@ -1,0 +1,73 @@
+//Classes are similar to structures in terms of definition and execution but the MAIN DIFFERENCE IS THAT classes facilitate INHERITANCE
+
+
+
+-----------------------------------------
+Imagine this  to be the enemey class in the enemy.swift file
+
+
+class Enemy{
+    var health = 100
+    var attackStrength = 10
+    
+    func move(){
+        print("Walk forwards.")
+    }
+    
+    func attack() {
+        print("Land a hit, does\(attackStrength) damage.")
+    }
+    }
+  
+  
+  
+---------------------------------------------------------------------
+
+//Supose you want an dragon(class) which constitutes the base properties of enemy the dragon class would be as follows
+
+class Dragon: Enemy {
+    var wingSpan = 2
+    
+    func talk(speech:String){
+        print("Says: \(speech)")
+    }
+    
+    override func move() {
+        print("Fly forward")
+    }
+    override func attack() {
+        super.attack()
+        print("Spits fire, does 10 damage")
+        
+    }
+}
+
+
+//Here note that because we want Dragons to fly forward instead of walking forvward we override the move method by adding the override keyword in from of the function to override it 
+
+// In the attack function we want to override it to make a custom attack at the same time we need the attack() method which is present in its parent( Enemy) class which is being inherited
+//To use the functionality of the parent method we use super.attack() to make this possible
+
+---------------------------------------------------------------------------
+//contents of the main.swift fine 
+
+
+let skeleton = Enemy()
+//print(skeleton.health)
+//skeleton.move()
+//s//keleton.attack()
+
+//let skeleton2 = Enemy()
+//let skeleton3 = Enemy()
+
+let dragon  = Dragon()
+dragon.wingSpan = 5
+dragon.attackStrength = 15
+dragon.talk(speech: "My teeth are swords! my clws are spears! My wings are hurricane")
+dragon.move()
+dragon.attack()
+        
+
+-----------------------------
+
+-------------------------------------------------------------------------
