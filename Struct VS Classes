@@ -1,0 +1,96 @@
+// Structs do not facilitate inheritance whereas classes support inheritance
+//Classes are Passed by referenced where are Structs are Passed by Value
+//Classes DO REQUIRE an init() to initialise non assigned variables
+
+---------------------------------------------------------------
+struct Enemy{
+    var health :Int
+    var attackStrength :Int
+    init(health:Int, attackStrength: Int) {
+        self.health = health
+        self.attackStrength = attackStrength
+    }
+    
+    mutating func takeDamage(amount:Int){
+        health = health - amount
+    }
+    func move(){
+        print("Walk forwards.")
+    }
+    
+    func attack() {
+        print("Land a hit, does\(attackStrength) damage.")
+    }
+    }
+    
+ -----------------------------------
+ 
+let skeleton1 = Enemy(health: 100, attackStrength:10)
+var skeleton2 = skeleton1
+//Here ther are two references to the same object
+//struct really does make a copy
+//struct destroys the old object and creates a new object
+skeleton1.takeDamage(amount: 10)
+skeleton1.takeDamage(amount: 10)
+skeleton2.takeDamage(amount: 10)
+print(skeleton1.health)// 80
+print(skeleton2.health)// 90
+
+
+
+------------------------------------------------------------------------------
+
+//Note: A varible that is declared inside a struct such as var health cannot be altered within a struct Unless a mutating keyword is added before the function
+//Mutating function basically creates a sort of another structure with the updated value in the background
+
+// let skeleton1 = Enemy(health: 100, attackStrength:10)
+//you cannot declare a struct using the above line of code as you would not be able to use the mutating function 
+//Xcode throws this error:Cannot use mutating member on immutable value: 'skeleton1' is a 'let' constant
+//This is because as mentioned earlier the mutating function creates another structure with the updated value in the background 
+//Because let is constant Xcode cannot facilitate this change hence it throws an error
+//To fix it change let to a var
+
+
+--------------------------------------------------------------------------------------------
+
+//Classes are passed by reference
+
+class Enemy{
+    var health :Int
+    var attackStrength :Int
+    init(health:Int, attackStrength: Int) {
+        self.health = health
+        self.attackStrength = attackStrength
+    }
+    
+ func takeDamage(amount:Int){
+        health = health - amount
+    }
+    func move(){
+        print("Walk forwards.")
+    }
+    
+    func attack() {
+        print("Land a hit, does\(attackStrength) damage.")
+    }
+    }
+    
+ --------------------------------------
+ 
+let skeleton1 = Enemy(health: 100, attackStrength:10)
+var skeleton2 = skeleton1
+//Here ther are two references to the same object
+
+skeleton1.takeDamage(amount: 10)
+skeleton1.takeDamage(amount: 10)
+
+print(skeleton2.health)// 80
+
+//To avoid this the below could be done
+ skeleton2 = Enemy(health:100,attackstrength:10)
+
+--------------------------------------------------------------------------------------------------------
+
+
+
+
