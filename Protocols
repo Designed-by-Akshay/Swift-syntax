@@ -1,0 +1,89 @@
+/*
+Overview
+
+Both Classes and Structures can work with protocols . Do note that Classes/Structures can work with multiple prototypes
+A protocol consists of the required functions(methods) that must be present in the class/Struct that is being assigned to the protocol
+Because its something like a bluePrint that the class/Struct which implements the Protocvol must adhere to A function SHOULDNT be defined inside a protocol
+and Xcode throws an error if a function is define  
+Example: In the Protocol Defined below func speak { print("")} IS WRONG and hence we just write func speak() without defining it 
+Keep in mind that the Protocol name can be used as data type Refer the example below for more details although a quick snippet is provided here 
+struct FlyingMuseum {
+    func flyingDemo(flyingObject:CanFly){
+        flyingObject.fly()
+    }
+}
+
+
+----------Overview---------------
+
+protocol AnotherProtocol{
+   func speak()
+}
+
+-----------Example---------------------
+
+struct Mystruct: Protocol, AnotherProtocol {
+
+}
+
+class Myclass :Superclass, Protocol, AnotherProtocol {
+
+}
+
+
+*/
+------------------
+CODE
+----------------------
+
+class Bird {
+    var isFemale = true
+    
+    func layEgg(){
+        if isFemale {
+            print("The bird makes a new bird in a shell.")
+        }
+    }
+    
+   
+}
+
+
+class Eagle: Bird,CanFly {
+    func fly() {
+        print("The eagle flaps is wings and lifts off into the sky. ")
+    }
+    
+    func soar(){
+        print("The eagle glides in the air using air currents.")
+    }
+    
+}
+
+class Penguin:Bird{
+    func swim(){
+        print("The penguin paddles through the water.")
+    }
+
+}
+
+struct FlyingMuseum {
+    func flyingDemo(flyingObject:CanFly){
+        flyingObject.fly()
+    }
+}
+
+struct Airplane: CanFly {
+     func fly(){
+        print("The airplane uses its engine to lift off into the air.")
+    }
+}
+
+let myEagle = Eagle()
+let myPenguin = Penguin()
+let myPlane = Airplane()
+let museum = FlyingMuseum()
+
+museum.flyingDemo(flyingObject: myEagle)
+museum.flyingDemo(flyingObject: myPlane)
+
