@@ -1,0 +1,59 @@
+/*
+ Closure Expression Syntax
+ {(parameters) ->
+ 
+ }
+ */
+
+import UIKit
+
+func calculator(n1:Int, n2:Int, operation:(Int, Int)->Int ) -> Int {
+    return  operation(n1, n2)
+}
+func add (no1:Int, no2:Int)-> Int{
+    return no1 + no2
+}
+
+func multiply (no1:Int,no2:Int) -> Int{
+    return no1 * no2
+}
+calculator(n1: 2, n2: 3, operation: add
+)
+calculator(n1: 2, n2: 3, operation: multiply)
+
+calculator(n1: 2, n2: 3, operation: { (no1:Int , no2:Int) ->Int in
+    return no1 * no2
+}
+)
+
+calculator(n1: 2, n2: 3, operation: { (no1 , no2) ->Int in
+    return no1 * no2
+}
+)
+
+calculator(n1: 2, n2: 3, operation: { (no1 , no2)  in
+    return no1 * no2
+}
+)
+
+calculator(n1: 2, n2: 3, operation: { (no1 , no2)  in no1 * no2})
+
+//$0 First parameter
+//$1 Second Parameter
+
+let result = calculator(n1: 2, n2: 3, operation: {$0 * $1})
+print(result)
+
+//in swift there is a rule which states if the last parameter inside a function is a closure then you can omit llast parameter name and have the closure trailing at the end
+//This is called trailing closure
+
+let result1 = calculator(n1: 2, n2: 3) {$0 * $1}
+print(result1)
+
+ 
+ 
+let array = [6,2,3,9,4,1]
+
+//The map function takes a function as an input
+let newArray = array.map{"\($0)"}
+print(newArray)
